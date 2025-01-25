@@ -20,9 +20,14 @@ compileJava {
     options.compilerArgs << '-parameters'
 }
 
+// Ensures latest Jingle commit
+configurations.configureEach {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
 dependencies {
     // Choose Jingle version: https://jitpack.io/#DuncanRuns/Jingle/
-    implementation 'com.github.DuncanRuns:Jingle:6cbe236f32'
+    implementation 'com.github.DuncanRuns:Jingle:main-SNAPSHOT'
 }
 
 
